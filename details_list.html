@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-end my-3">
+    <a href="{{ url_for('details_add') }}"
+    <button class="btn btn-primary">Add details</button>
+    </a>
+</div>
+
+<div style="text-align:center;">
+<center>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for d in Details %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.role }}</td>
+            <td>
+               <a href="{{ url_for('details_edit',id=d.id)}}"><button class="btn btn-warning">Edit</button></a>
+            </td>
+            <td>
+               <a href="{{ url_for('details_delete',id=d.id)}}"><button class="btn btn-warning">delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+{% endblock %}
+
+</center>

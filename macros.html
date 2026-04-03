@@ -1,0 +1,43 @@
+{% macro title (value) %}
+
+<h2>{{ value }} this is macro work </h2>
+
+
+
+
+{% endmacro %}
+
+{% macro input_field(name,type="text",placeholder="") %}
+
+
+<label for="">{{ name | title }}</label>
+<input type="{{ type }}" name="{{ name }}" placeholder="{{ placeholder }}">
+
+<br><br>
+
+{% endmacro %}
+
+
+{% macro idcard (name,role) %}
+
+
+<div>
+
+  <h5> name :{{ name }}</h5>
+  <h5> role :{{ role }}</h5>
+
+
+</div>
+
+<div>
+  <h3>employe projects list</h3>
+  {{ caller ()}}
+
+
+</div>
+
+
+
+
+
+{% endmacro %}
